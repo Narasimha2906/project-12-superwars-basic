@@ -1,4 +1,4 @@
-const PLAYERS = [
+const players = [
     "Spiderman",
     "Captain America",
     "Wonderwoman",
@@ -43,8 +43,7 @@ const initPlayers = (players) => {
 const getRandomStrength = () => {
     // Return a random integer (0,100]
     // Note: You can use Math.random() and Math.ceil()
-    var strength = Math.random();
-    return Math.ceil(strength);
+   return (Math.ceil(Math.random()*100));
 }
 
 const buildPlayers = (players, type) => {
@@ -55,17 +54,17 @@ const buildPlayers = (players, type) => {
     // depending of type of player(hero|villain)
     // Type your code here
     for(let i=0;i<players.length;i++){
-        player=
+        let player=
         `<div class="player">
         <img src="${players[i].image}" alt="">
         <div class="name">${players[i].name}</div>
         <div class="strength">${players[i].strength}</div>
     </div>`
-    }
+  ;
     if(players[i].type==type){
         fragment=fragment+player;
     }
-     
+}
 
     return fragment;
 }
@@ -78,5 +77,5 @@ const viewPlayers = (players) => {
 }
 
 window.onload = () => {
-    viewPlayers(initPlayers(PLAYERS));
+    viewPlayers(initPlayers(players));
 }
